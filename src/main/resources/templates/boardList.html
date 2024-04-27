@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- boardList.html은 로그인한 후 보이는 일반유저 페이지 -->
+<html xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+        .head-line {
+            background-color: khaki;
+            padding: 50px;
+            margin-bottom: 100px;
+        }
+        .head-title {
+            text-align: center;
+        }
+        .portfolio-part {
+            background-color: lightgray;
+            padding: 100px;
+            border: 2px solid black;
+            max-width: 600px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .logout-btn {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="head-line">
+    <h1 class="head-title">방명록</h1>
+    <div class="logout-btn">
+        <!-- 나중에 onclick 부분 href에 대표 포트폴리오 페이지로 수정하기 -->
+        <button type="button" id="logout-btn" th:onclick="|location.href='@{/login}'|" class="btn btn-secondary btn-sm mb-3">로그아웃</button>
+    </div>
+</div>
+
+<div class="container">
+    <button type="button" id="board-btn" onclick="location.href='/new-board'" class="btn btn-secondary btn-sm mb-3">방명록</button>
+</div>
+<div class="portfolio-part">
+<h1>대표 포트폴리오</h1>
+</div>
+
+</body>
+</html>
