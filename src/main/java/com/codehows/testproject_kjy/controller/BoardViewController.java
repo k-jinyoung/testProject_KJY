@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class BoardViewController {
     private final BoardService boardService;
 
     //로그인 후 보이는 일반유저 페이지
-    @GetMapping("/boards")
+    @GetMapping("/main")
     public String getBoards(Model model) {
         List<BoardListViewResponse> boards = boardService.findAll().stream()
                 .map(BoardListViewResponse::new)
@@ -28,12 +27,13 @@ public class BoardViewController {
         model.addAttribute("boards", boards);
 
         //boardList.html로 반환
-        return "boardList";
+        return "main";
     }
 
     //방명록 등록 하고 조회하는 부분
     @GetMapping("/new-board")
     public String newBoard() {
+
         return "newBoard";
     }
 
