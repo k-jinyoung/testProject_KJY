@@ -19,5 +19,11 @@ public class AdminPageViewController {
         return "boardAdminPage";
     }
 
+    //등록하기 버튼을 클릭했을 때 포트폴리오 등록 페이지로 이동
+    @GetMapping("/add-portfolio")
+    public String addPortfolio() {
+        return "addPortfolio";
+    }
+
 
 }
